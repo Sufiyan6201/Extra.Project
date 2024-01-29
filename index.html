@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Form-Validation</title>
+      <!-- google font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,800;0,900;1,100;1,200;1,300;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+      <!-- fontawsome -->
+      <link rel="stylesheet" href="asset/css/fontawesome.min.css">
+      <link rel="stylesheet" href="asset/css/all.min.css">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+      <!-- css -->
+      <link rel="stylesheet" href="asset/css/styl.css">
+</head>
+
+<body>
+      <div class="container-fluid  ">
+            <div class="container cont text-sm-center  ">
+                  <form action="" id="myForm" class="form-control-lg height " onsubmit="return validate()">
+                        <h1 class="text-center mt-5 text-danger-emphasis  fw-bold display-1 ">Form Validation</h1>
+                        <hr style="height:4px; background-color:#ddd;">
+
+                        <label for="name" class="fs-4  fw-bolder fs-6 form-check-label  ">Name : </label><br />
+                        <input type="text" id="name" class="form-control-lg col-sm-4 col-xl-6 " name="name"
+                              placeholder="Enter your Name.."><br><span id="error_name"
+                              class="text-danger m-0   "></span><br>
+                        <label for="email" class="fs-4  fw-bolder fs-6">Enter Valid Email</label><br />
+                        <input type="email" id="email" name="email" class="form-control-lg col-sm-4 col-xl-6 "
+                              placeholder="Enter your Email..."><br><span id="error_email"
+                              class="text-danger m-0   "></span><br>
+                        <label for="password" class="fs-4  fw-bolder fs-6">Password</label><br>
+                        <input type="password" id="password" class="form-control-lg col-sm-4 col-xl-6 " placeholder="Enter Password.."
+                              name="pass"><br><span id="error_password" class="text-danger m-0   "></span><br />
+                        <div class="btn1 col-12 text-center   ">
+                              <button type="submit"
+                                    class="btn btn-success w-50 fs-3" id="smt">Submit</button>
+
+                              <input type="reset" class="btn btn-outline-danger  w-50 fs-3">
+                        </div>
+                  </form>
+                  <div id="messege" class=" text-start px-5  ">
+                        <h2 class="text-decoration-underlin fs-2 "> Password Must Conten the Following</h2>
+                        <h3 id="letter" class="invalid">A <b>LowerCase</b> Letter</h3>
+                        <h3 id="capital" class="invalid">A <b>capital (uppercase)</b> Letter</h3>
+                        <h3 id="number" class="invalid">A <b>Number</b> Letter</h3>
+                        <h3 id="length" class="invalid">Minimum <b>8 characters</b> Letter</h3>
+                  </div>
+            </div>
+      </div>
+      <!-- bootstrap js -->
+      <script src="asset/js/bootstrap.bundle.min.js"></script>
+      <!-- main.js -->
+      <script src="asset/js/main.js"></script>
+</body>
+
+</html>
+<!-- For Messege javascript -->
+<script>
+      var myInput = document.getElementById("password");
+      var letter = document.getElementById("letter");
+      var capital = document.getElementById("capital");
+      var number = document.getElementById("number");
+      var length = document.getElementById("length");
+
+      myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+myInput.onkeyup = function(){
+      var  lowerCaseLetters = /[a-z]/;
+      var upperCaseLetters = /[A-Z]/;
+      var numbers = /[\d]*/;
+      var allCharacters = /(.*)?/;
+      if(myInput.value.match(lowerCaseLetters)) {
+         letter.classList.remove("invalid")
+         letter.classList.add("valid")
+      } else {
+            letter.classList.remove("valid")
+            letter.classList.add("invalid");
+}
+if(myInput.value.match(upperCaseLetters)){
+     capital.classList.remove("invalid")
+     capital.classList.add("valid")
+}else{
+         capital.classList.remove("valid")
+     capital.classList.add("invalid")
+}
+var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {  
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+  
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+</script>

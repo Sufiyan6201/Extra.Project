@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bubblegum Sans', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+button:hover,input[type=reset] {
+    color: rgb(0, 0, 0) !important;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border: 2px solid black !important;
+}
+.container{
+    max-width: 800px !important;
+    border-radius: 20px ;
+}
+.height{
+    height: 75vh !important;
+}
+body{
+    background-image: url(../images/images.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 100vh !important;
+}
+#spen {
+    color: green;
+}
+.cont{
+
+    border: 1px solid gray;
+    backdrop-filter: blur(20px);
+}
+#message {
+    display: none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 10px;
+    margin-top: 6px;
+}
+
+#message p {
+    padding: 5px 25px;
+    font-size: 15px;
+}
+
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    color: green;
+    left: -15px;
+    font-size: 30px;
+    font-weight: 800;
+    content: "\2713";
+}
+.btn-outline-danger{
+    --bs-btn-color: #ff00ea;
+    --bs-btn-border-color: #ff00aa;
+    --bs-btn-hover-color: #0015ff;
+    --bs-btn-hover-bg: #ff00dd;
+    --bs-btn-hover-border-color: #ff00bb;
+    --bs-btn-focus-shadow-rgb: 220, 53, 69;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #dc3545;
+    --bs-btn-active-border-color: #dc3545;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(193, 193, 193, 0.679);
+    --bs-btn-disabled-color: #dc3545;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #dc3545;
+    --bs-gradient: none
+}
+.btn-success {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #4800ff;
+    --bs-btn-border-color: #8000ff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #4800ff;
+    --bs-btn-hover-border-color: #146c43;
+    --bs-btn-focus-shadow-rgb: 60, 153, 110;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #146c43;
+    --bs-btn-active-border-color: #13653f;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #198754;
+    --bs-btn-disabled-border-color: #198754
+}
+
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    color: red;
+    left: -15px;
+    font-size: 30px;
+    font-weight: 800;
+    content: "\00D7";
+}
